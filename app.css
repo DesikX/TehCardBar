@@ -1,0 +1,53 @@
+:root {
+  font-family: 'DM Sans', sans-serif;
+  color: #f7efe5;
+  background: #171411;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; min-height: 100vh; background: #171411; }
+button, input { font: inherit; }
+button { cursor: pointer; }
+
+.app-shell {
+  min-height: 100vh;
+  padding: 48px 20px 72px;
+  background: radial-gradient(circle at 85% 0%, #49321d 0, transparent 33%), #171411;
+}
+.app-container { width: min(100%, 1040px); margin: 0 auto; }
+.app-header { margin-bottom: 32px; }
+.eyebrow { margin: 0 0 10px; color: #d99a55; font-size: 0.76rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.app-title { margin: 0; max-width: 700px; font-family: 'Playfair Display', serif; font-size: clamp(2.4rem, 6vw, 4.8rem); line-height: 0.98; letter-spacing: -0.03em; }
+.app-subtitle { max-width: 560px; margin: 18px 0 0; color: #bcae9f; font-size: 1.05rem; line-height: 1.6; }
+.toolbar { display: flex; gap: 12px; align-items: center; margin-top: 30px; }
+.tabs { display: flex; max-width: 100%; overflow-x: auto; padding: 5px; gap: 4px; background: #2a231d; border: 1px solid #4a3a2c; border-radius: 12px; }
+.tab { border: 0; border-radius: 8px; padding: 11px 20px; color: #bcae9f; background: transparent; font-weight: 700; transition: 180ms ease; }
+.tab { flex: 0 0 auto; white-space: nowrap; }
+.tab:hover { color: #fff9f2; background: #3a2e24; }
+.tab.active { color: #21170e; background: #e0a565; }
+.search { min-width: 220px; flex: 1; padding: 13px 16px; color: #fff9f2; background: #211c18; border: 1px solid #4a3a2c; border-radius: 10px; outline: none; }
+.search::placeholder { color: #897a6b; }
+.search:focus { border-color: #d99a55; box-shadow: 0 0 0 3px rgba(217, 154, 85, 0.16); }
+.drink-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.drink-card { overflow: hidden; background: #211c18; border: 1px solid #3e3126; border-radius: 14px; box-shadow: 0 12px 28px rgba(0,0,0,.16); transition: transform 180ms ease, border-color 180ms ease; }
+.drink-card:hover { transform: translateY(-4px); border-color: #a96f38; }
+.drink-image { display: block; width: 100%; height: 220px; object-fit: cover; }
+.drink-content { padding: 22px; }
+.drink-heading { display: flex; gap: 12px; align-items: flex-start; justify-content: space-between; margin-bottom: 20px; }
+.drink-name { margin: 0; color: #fff9f2; font-family: 'Playfair Display', serif; font-size: 1.45rem; line-height: 1.15; }
+.volume { flex: 0 0 auto; padding: 5px 9px; color: #e0a565; background: #34271d; border-radius: 6px; font-size: .78rem; font-weight: 700; }
+.detail { margin-top: 16px; }
+.detail-label { margin: 0 0 6px; color: #d99a55; font-size: .7rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+.detail-text { margin: 0; color: #c6b9ab; font-size: .94rem; line-height: 1.55; }
+.empty-state { grid-column: 1 / -1; padding: 56px 20px; color: #bcae9f; text-align: center; background: #211c18; border: 1px dashed #4a3a2c; border-radius: 14px; }
+
+@media (max-width: 680px) {
+  .app-shell { padding: 30px 14px 48px; }
+  .toolbar { align-items: stretch; flex-direction: column; }
+  .search { min-width: 0; }
+  .tabs { justify-content: flex-start; }
+  .drink-grid { grid-template-columns: 1fr; }
+  .drink-image { height: 210px; }
+}
